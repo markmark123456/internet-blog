@@ -15,3 +15,14 @@ Route::get('/auth/login', [LoginController::class, 'showLoginForm'])->name('logi
 Route::post('/auth/login', [LoginController::class, 'login'])->name('login');
 
 Route::post('/auth/logout', [LogoutController::class, 'logout'])->name('logout');
+
+use App\Http\Controllers\ArticleController;
+
+
+Route::get('/articles/create', [ArticleController::class, 'create'])->middleware('auth')->name('articles.create');
+Route::post('/articles', [ArticleController::class, 'store'])->middleware('auth')->name('articles.store');
+Route::get('/articles/{id}/edit', [ArticleController::class, 'edit'])->middleware('auth')->name('articles.edit');
+Route::put('/articles/{id}', [ArticleController::class, 'update'])->middleware('auth')->name('articles.update');
+Route::delete('/articles/{id}', [ArticleController::class, 'destroy'])->middleware('auth')->name('articles.destroy');
+Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
+

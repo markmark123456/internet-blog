@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('content')
 <form method="POST" action="{{ route('login') }}">
     @csrf
     <input type="email" name="email" placeholder="Email" required autofocus>
@@ -16,3 +17,4 @@
 @endif
 
 <a href="{{ route('register') }}">Зарегистрироваться</a>
+@endsection

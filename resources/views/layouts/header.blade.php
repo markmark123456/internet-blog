@@ -1,28 +1,21 @@
-@extends('layouts.app')
-
-@section('title', 'Главная')
-
-    @if(session()->has('success'))
-            <p class="alert alert-success">{{ session()->get('success') }}</p>
-    @endif
-    @if(session()->has('warning'))
-            <p class="alert alert-warning">{{ session()->get('warning') }}</p>
-    @endif
-
-@auth
-    <p>Вы вошли как {{ Auth::user()->name }}</p>
-
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit">Выйти</button>
-    </form>
-
-{{-- @if(Auth::user()->is_admin)
-        <a href="{{ route('admin.index') }}">(админ)</a>
-@endif --}}
-
-@endauth
-
-@guest
-    <a href="{{ route('login') }}">Войти</a>
-@endguest
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="{{ url('/') }}">Мой блог</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('/') }}">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('/blog') }}">Блог</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('/about') }}">О нас</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

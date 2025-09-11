@@ -17,6 +17,7 @@
             @endforeach
         </div>
     @endif
-@endsection
 
-<a href="{{ route('login') }}">Войти</a>
+
+    <a href="{{ route('login') }}">Войти</a>
+@endsection

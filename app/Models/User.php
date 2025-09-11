@@ -45,4 +45,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    
+        // Связь с таблицей статей
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }
+
+
+
