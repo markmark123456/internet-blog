@@ -10,5 +10,6 @@
    
     @endauth
 
+    {{-- Включаем блок всех статей --}}
     @include('articles._all_articles', ['articles' => $articles])
 @endsection

@@ -15,6 +15,7 @@
           @endauth
         </li>
         <li class="nav-item">
+          {{-- Кнопки для гостя --}}
           @guest
             <a href="{{ route('login.show') }}" class="btn btn-primary mb-3">Войти</a>
             <a href="{{ route('register.show') }}" class="btn btn-secondary mb-3">Регистрация</a>
