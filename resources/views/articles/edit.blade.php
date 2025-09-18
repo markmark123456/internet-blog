@@ -7,7 +7,7 @@
 
     <form action="{{ route('articles.update', $article->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('PUT') {{-- обязательно для метода PUT --}}
+        @method('PUT') 
 
         <div class="mb-3">
             <label class="form-label">Заголовок</label>

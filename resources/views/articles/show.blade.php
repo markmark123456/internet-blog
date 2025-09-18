@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    {{-- Кнопка редактирования и удаления (только для автора) --}}
+    
     @auth
         @if(auth()->id() === $article->user_id)
             <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-primary">Редактировать</a>

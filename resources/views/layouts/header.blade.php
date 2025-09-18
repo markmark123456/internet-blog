@@ -7,7 +7,6 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          {{-- Кнопки для авторизованного пользователя --}}
           @auth
               <form action="{{ route('logout') }}" method="POST" class="d-inline">
                   @csrf
@@ -16,7 +15,6 @@
           @endauth
         </li>
         <li class="nav-item">
-          {{-- Кнопки для гостя --}}
           @guest
             <a href="{{ route('login.show') }}" class="btn btn-primary mb-3">Войти</a>
             <a href="{{ route('register.show') }}" class="btn btn-secondary mb-3">Регистрация</a>
